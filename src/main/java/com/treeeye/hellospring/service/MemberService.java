@@ -17,27 +17,13 @@ public class MemberService {
     }
 
     public Long join(Member member) {
-        long start = System.currentTimeMillis();
-        try {
-            validateDuplicateMember(member);
-            repository.save(member);
-            return member.getId();
-        } finally {
-            long finish = System.currentTimeMillis();
-            long timeMs = finish - start;
-            System.out.println("join = " + timeMs + "ms");
-        }
+        validateDuplicateMember(member);
+        repository.save(member);
+        return member.getId();
     }
 
     public List<Member> findMembers() {
-        long start = System.currentTimeMillis();
-        try {
-            return repository.findAll();
-        } finally {
-            long finish = System.currentTimeMillis();
-            long timeMs = finish - start;
-            System.out.println("join = " + timeMs + "ms");
-        }
+        return repository.findAll();
     }
 
     public Optional<Member> findOne(Long memberId) {
