@@ -2,8 +2,6 @@ package com.treeeye.hellospring.service;
 
 import com.treeeye.hellospring.domain.Member;
 import com.treeeye.hellospring.repository.MemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
