@@ -20,6 +20,9 @@ class MemberServiceIntegrationTest {
     @Autowired
     MemberService service;
 
+    @Autowired
+    MemberRepository memberRepository;
+
     @Test
     void join() {
         Member member = new Member();

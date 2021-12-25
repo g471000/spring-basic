@@ -2,10 +2,12 @@ package com.treeeye.hellospring.service;
 
 import com.treeeye.hellospring.domain.Member;
 import com.treeeye.hellospring.repository.MemberRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
 
     private final MemberRepository repository;
