@@ -2,20 +2,23 @@ package com.treeeye.hellospring.service;
 
 import com.treeeye.hellospring.domain.Member;
 import com.treeeye.hellospring.repository.MemberRepository;
-import com.treeeye.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepository repository;
 
+    @Autowired
     public MemberService(MemberRepository repository) {
         this.repository = repository;
     }
 
-    public Long join (Member member) {
+    public Long join(Member member) {
         validateDuplicateMember(member);
         repository.save(member);
         return member.getId();
